@@ -1,0 +1,40 @@
+import nltk
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+from nltk.stem import WordNetLemmatizer
+#Function for preprocessing text is generated
+def preprocess_text(text):
+    tokens=word_tokenize(text.lower())
+    filtered_tokens=[token for token in tokens if token not in stopwords.words('english')]
+    lemmatizer = WordNetLemmatizer()
+    lemmatized_tokens = [lemmatizer.lemmatize(token) for token in filtered_tokens]
+    processed_text = ' '.join(lemmatized_tokens) # Join the tokens back into a string
+    return processed_text
+# apply the function to df
+df['text'] = df['text'].apply(preprocess_text)
+# initialize NLTK sentiment analyzer
+analyzer = SentimentIntensityAnalyzer()
+#Create scores_text function
+def scores_text(text):
+    scores_text=analyzer.polarity_scores(text)
+    return scores_text
+
+def get_sentiment(text):# create get_sentiment function 
+    scores = analyzer.polarity_scores(text)
+    if scores['compound']>0:
+        sentiment="positive"
+    elif scores['compound']==0:
+        sentiment="neutral"
+    else:
+        sentiment="negative"
+    return sentiment
+        
+def sentiment_value(text): #Function to store scores for compound sentiment
+    scores = analyzer.polarity_scores(text)
+    sentiment_value=scores['compound']
+    return sentiment_value
+# apply scores_text and get_sentiment function
+df["scores"]=df['text'].apply(scores_text)
+df['sentiment'] = df['text'].apply(get_sentiment)
+df["sentiment_score"]=df["text"].apply(sentiment_value)
