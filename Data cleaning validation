@@ -1,0 +1,59 @@
+#Data cleaning and validation
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+df=pd.read_csv("instagram.csv")
+print(df.dtypes)
+print(df["country"].unique()) #unique values: ['DE' 'GB' 'IN' 'CA' 'US']
+print(df["date"].unique())  #Has both date and time for each record. may need to do something with date and time.
+#Will have additional columns with division based on days and time
+print(df["date"].min())
+print(df["date"].max())
+
+print(df["score"].unique()) #unique values: [1 4 3 2 5]
+
+print(df["version"].unique()) # unique values: ['323.0.0' '322.1.0' '313.0.0' '322.0.0']
+
+##Duplicates
+print(df[df.duplicated()])  #No duplicates
+
+
+#Check for missing values
+print(df.isna().sum())
+
+#Other forms of missing values
+null_list=["NAN", "na", "n/a", "-", "--", "nan"]
+
+for cols in df:
+    print(cols + ": ", df[df[cols].isin(null_list)])
+
+##No other forms of missing values
+
+#Change country and version to category datatype
+df["country"]=df["country"].astype("category")
+df["version"]=df["version"].astype("category")
+
+#Create separate columns days and time based on date column
+df["date"]=pd.to_datetime(df['date'])  #changing column date to datetime data type
+
+df['day_of_week'] = df['date'].dt.day_name() #Extracting weekdays information and converting to week day to form a new column day_of_week
+#df.head()
+
+df['day_of_week']=df['day_of_week'].astype("category")
+
+df["hour"]=df['date'].dt.hour ##Extracting hours from date and creating a new column hour
+
+def hour_conversion(hour):
+    if hour >= 0 and hour < 6:
+        return 'Mid night-Early morning'
+    elif hour>=6 and hour<12:
+        return 'Morning'
+    elif hour >= 12 and hour < 18:
+        return 'Afternoon'
+    elif hour >= 18 and hour <= 23:
+        return 'Night'
+    
+df['day_part'] = df['hour'].apply(hour_conversion)   
+df['day_part']=df['day_part'].astype("category") 
+print(df.dtypes)
