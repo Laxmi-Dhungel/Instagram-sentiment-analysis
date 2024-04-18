@@ -72,7 +72,7 @@ The average sentiment score for each review score was determined. The average se
 
 Figure 7. The bar graph showing the average sentiment scores for each review score (Rating). Rating 5 had the highest sentiment scores whereas rating 1 had the lowest sentiment score. The sentiment scores for ratings 1,2 and 3 were significantly lower than sentiment scores for rating 5. The sentiment score for rating 1 was also significantly lower than sentiment score for rating 4. 
 
-![RP_review_sentiments](https://github.com/Laxmi-Dhungel/Instagram-sentiment-analysis/assets/154451345/21b9890e-2a10-487a-9faa-3a912c0517cd)
+![RP_review_sentiments](https://github.com/Laxmi-Dhungel/Instagram-sentiment-analysis/assets/154451345/2df975cf-30dc-4d8d-84ec-2536307951ff)
 
 Figure 8. Relative percentages of sentiments for each review scores. The positive sentiment was highest for rating 5 whereas it was lowest for rating 2. The negative sentiment was highest for rating 1 whereas it was lowest for rating 4. The highest percentages of sentiments for ratings 1,2,3,4 and 5 were negative, neutral, positive, neutral and positve respectively. The chisquare test showed a significant association between review score (Rating) and sentiments (p<0.05). The sentiments of reviewers who gave ratings 1,2 and 3 significantly differed than the sentiments of reviewers who gave ratings 4 and 5 (Separated by red line). Further, there was also a significant difference in sentiments between reviewers who gave ratings 4 and 5.  
 
