@@ -239,8 +239,11 @@ plt.xlabel("Review score")
 plt.ylabel("Relative percentages")
 plt.title("Relative percentages of sentiments for each review score")
 sns.move_legend(stacked_review_sentiment, "upper left", bbox_to_anchor=(1, 1.05))
-
-
+plt.ylim(0,120)
+plt.vlines(x=2.5, ymin=0, ymax=105, color='red', ls=":", lw=2, label='vline_single - partial height' )
+stacked_review_sentiment.annotate(" ", xy=(3.5, 105), xytext=(3.5, 105), arrowprops=dict(color='black', lw=2, arrowstyle='-[', ), ha='center', size=40)
+plt.text(3.5, 110, "*", ha="center", fontsize=20)
+plt.text(2.5, 106, "*", ha="center", fontsize=20)
 plt.show()
 
 #################################
