@@ -1,4 +1,4 @@
-**Country based Instagram sentiments and ratings** 
+**Factors impacting instagram sentiments** 
 
 This report includes analysis of Instagram data obtained from Kaggle (Kanchana Karunarathna, 2024). The data consists of 500 ratings and reviews posted by users from 5 different countries, the USA, Canada, the UK, Germany, and India. In this report, I analyzed the ratings and sentiments towards Instagram across these countries. Furthermore, I also investigated the relationship between sentiments and ratings. 
 
