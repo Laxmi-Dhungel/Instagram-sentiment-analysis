@@ -1,0 +1,50 @@
+corr_review_sentiment=df['score'].corr(df['sentiment_score'])
+print(corr_review_sentiment)  ##Correlation is 0.36
+
+
+review_sentiment_mean=df.groupby("score")["sentiment_score"].mean()
+print(review_sentiment_mean)
+
+tukey_review_sentiment=pairwise_tukeyhsd(endog=df["sentiment_score"], groups=df["score"], alpha=0.05)
+tukey_review_sentiment_summary=tukey_review_sentiment.summary()
+tukey_df_review_sentiment=pd.DataFrame(tukey_review_sentiment_summary.data[1:], columns=tukey_review_sentiment_summary.data[0])
+significant_tukey_review_sentiment=tukey_df_review_sentiment[tukey_df_review_sentiment["p-adj"]<=0.05]
+
+
+review_sentiment_bar=sns.barplot(x="score", y="sentiment_score", data=df, errorbar="se", capsize=0.5, hue="score")
+plt.xlabel("Review score")
+plt.ylabel("Sentiment score")
+plt.title("Average sentiment score for each review score")
+sns.move_legend(review_sentiment_bar, "upper left", bbox_to_anchor=(1, 1.05))
+plt.text(0.08, 0.02, "[4,5]", ha='center', fontsize=15)
+plt.text(0.08, 0.04, "*", ha='center', fontsize=20)
+
+plt.text(1, 0.04, "[5]", ha='center', fontsize=15)
+plt.text(1, 0.07, "*", ha='center', fontsize=20)
+
+plt.text(2, 0.15, "[5]", ha='center', fontsize=15)
+plt.text(2, 0.18, "*", ha='center', fontsize=20)
+
+plt.show()
+
+#Relative percentages
+df_review_sentiment=pd.crosstab(df["score"], df["sentiment"])
+df_review_sentiment_proportion=pd.crosstab(df["score"], df["sentiment"], normalize="index")
+df_review_sentiment_percentages=df_review_sentiment_proportion*100
+
+print(df_review_sentiment_percentages.idxmax(axis=1))
+print(df_review_sentiment_percentages.idxmax(axis=0))
+print(df_review_sentiment_percentages.idxmin(axis=0))
+
+# import pingouin as pg
+# expected, observed, stats = pg.chi2_independence(df, x='score',  y='sentiment')
+# print(stats.round(3))
+
+stacked_review_sentiment=df_review_sentiment_percentages.plot(kind="bar", stacked="True")
+plt.xlabel("Review score")
+plt.ylabel("Relative percentages")
+plt.title("Relative percentages of sentiments for each review score")
+sns.move_legend(stacked_review_sentiment, "upper left", bbox_to_anchor=(1, 1.05))
+
+
+plt.show()
