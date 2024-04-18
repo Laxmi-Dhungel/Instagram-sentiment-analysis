@@ -28,7 +28,7 @@ The NLTK (natural language toolkit) sentiment analysis was performed based on se
 
 **Statistical analysis**
 
-The pairwise tukeyhsd test was used to determine the statistically significant difference in average scores and sentiments between countries. The test was also used to determine significant difference in sentiments for different review scores.
+The pairwise tukeyhsd test was used to determine the statistically significant difference in average scores and sentiments between countries. The test was also used to determine significant difference in sentiments for different review scores. Further, chisquare test was used to test the association between review scores (Rating) and sentiments. The chisquare test was performed using pingouin and the post hoc test was adapted from Chi-square (and post-hoc) tests in Python by neuhofmo (https://neuhofmo.github.io/chi-square-and-post-hoc-in-python/). 
 
 **Results**
 
@@ -66,7 +66,7 @@ Figure 6. Count of Instagram versions used in each country. All (100/100) of the
 
 **Relationship between sentiment score and review score (Rating)**
 
-The average sentiment score for each review score was determined. The average sentiment score was highest for the review score 5 whereas it was lowest for the review score 1 (Figure 7). The average sentiment score for review score 1 was significantly lower than review score 4 and 5. Similarly, the average sentiment score for review scores 2 and 3 was significantly lower than review score 5. There was a low positive correlation between review score and sentiment score (0.37). The relative percentages of sentiments for each review scores showed that percentages of negative sentiments (40%) were highest in review score 1, percentages of neutral sentiments were highest in review score 2 (37%) and 4 (51.5%), and the percentages of positive sentiments was highest in review score 3 (46%) and 5(70%) (Figure 8). The review score 5, 4 and 1 had the highest percentages of positive, neutral and negative scores respectively. (https://github.com/Laxmi-Dhungel/Instagram-sentiment-analysis/blob/main/Relationship_sentiment_review)
+The average sentiment score for each review score was determined. The average sentiment score was highest for the review score 5 whereas it was lowest for the review score 1 (Figure 7). The average sentiment score for review score 1 was significantly lower than review score 4 and 5. Similarly, the average sentiment score for review scores 2 and 3 was significantly lower than review score 5. There was a low positive correlation between review score and sentiment score (0.37). The relative percentages of sentiments for each review scores showed that percentages of negative sentiments (40%) were highest in review score 1, percentages of neutral sentiments were highest in review score 2 (37%) and 4 (51.5%), and the percentages of positive sentiments was highest in review score 3 (46%) and 5(70%) (Figure 8). The review score 5, 4 and 1 had the highest percentages of positive, neutral and negative scores respectively. The Chi-squared independence tests showed a significant assocation between review scores (Ratings) with sentiment. A post hoc analysis was performed comparing sentiments between each review score (Rating) pairs. The p-values were corrected for multiple comaprisons using FDR correction. The results showed that sentiments of reviewers who gave review scores (Rating) 1,2 and 3 significantly differed than the sentiments of reviewers who gave review scores (Rating) 4 and 5. Further, there was also a significant difference in sentiments between reviewers who gave ratings 4 and 5. (https://github.com/Laxmi-Dhungel/Instagram-sentiment-analysis/blob/main/Relationship_sentiment_review)
 
 ![review_score_sentiment_score](https://github.com/Laxmi-Dhungel/Instagram-sentiment-analysis/assets/154451345/f5d41879-aa8c-4c96-a972-f6abec1ee2b8)
 
@@ -74,7 +74,7 @@ Figure 7. The bar graph showing the average sentiment scores for each review sco
 
 ![RP_review_sentiments](https://github.com/Laxmi-Dhungel/Instagram-sentiment-analysis/assets/154451345/21b9890e-2a10-487a-9faa-3a912c0517cd)
 
-Figure 8. Relative percentages of sentiments for each review scores. The positive sentiment was highest for rating 5 whereas it was lowest for rating 2. The negative sentiment was highest for rating 1 whereas it was lowest for rating 4. The highest percentages of sentiments for ratings 1,2,3,4 and 5 were negative, neutral, positive, neutral and positve respectively. 
+Figure 8. Relative percentages of sentiments for each review scores. The positive sentiment was highest for rating 5 whereas it was lowest for rating 2. The negative sentiment was highest for rating 1 whereas it was lowest for rating 4. The highest percentages of sentiments for ratings 1,2,3,4 and 5 were negative, neutral, positive, neutral and positve respectively. The chisquare test showed a significant association between review score (Rating) and sentiments (p<0.05). The sentiments of reviewers who gave ratings 1,2 and 3 significantly differed than the sentiments of reviewers who gave ratings 4 and 5 (Separated by red line). Further, there was also a significant difference in sentiments between reviewers who gave ratings 4 and 5.  
 
 
 **References**
