@@ -1,0 +1,25 @@
+#Country based review analysis
+#Average review for each country
+df_country_review=df.groupby("country")["score"].mean()
+print(df_country_review)
+
+#Statistical analysis to check significantly difference in average scores given by each country
+from statsmodels.stats.multicomp import pairwise_tukeyhsd
+
+tukey_country_review=pairwise_tukeyhsd(endog=df["score"], groups=df["country"], alpha=0.05)
+tukey_summary_country_review=tukey_country_review.summary()
+tukey_df_country_review = pd.DataFrame(data=tukey_summary_country_review.data[1:], columns=tukey_summary_country_review.data[0])
+significant_tukey_country_review=tukey_df_country_review[tukey_df_country_review["p-adj"]<=0.05]
+
+
+#Bar chart for review based on country
+bar_country_review=sns.barplot(x="country", y="score", data=df, errorbar="se", capsize=0.5, hue="country")
+plt.xlabel("Country")
+plt.ylabel("Review score (Rating)")
+plt.title("Average review score (Rating) given by each country")
+plt.ylim(0,5)
+bar_country_review.annotate(" ", xy=(2, 3.2),  xytext=(2, 3.2), arrowprops=dict(color='black', lw=2, arrowstyle='-[', ), ha='center', size=70)
+plt.text(2, 3.6, "*", ha='center', fontsize=20)
+bar_country_review.annotate(" ", xy=(2.5, 4.0),  xytext=(2.5, 4.0), arrowprops=dict(color='black', lw=2, arrowstyle='-[', ), ha='center', size=95)
+plt.text(2.5, 4.6, "*", ha='center', fontsize=20)
+plt.show()
