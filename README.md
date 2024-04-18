@@ -6,6 +6,8 @@ This report includes analysis of Instagram data obtained from Kaggle (Kanchana K
 
 The data was analyzed using python in spyder (https://www.spyder-ide.org/). 
 The python data analysis tools and library used were pandas (1.5.3), nltk(3.8.1), numpy (1.24.4), matplotlib (3.5.2), seaborn(0.13.2) and statsmodels (0.13.2).
+The overall code used for the data cleaning and analysis is provided here (https://github.com/Laxmi-Dhungel/Instagram-sentiment-analysis/blob/main/Overall_code0).
+The code specific to particular analysis are provided as separate file as well.
 
 **Data cleaning and validation**
 
