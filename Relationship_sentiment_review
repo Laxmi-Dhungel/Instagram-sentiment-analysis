@@ -48,3 +48,30 @@ sns.move_legend(stacked_review_sentiment, "upper left", bbox_to_anchor=(1, 1.05)
 
 
 plt.show()
+
+
+##
+#chisquare testing relationship between review scores (ratings) and sentiment
+
+from scipy.stats import chi2_contingency
+from itertools import combinations
+df_review_sentiment.index=df_review_sentiment.index.astype("category")
+ratings_combinations = list(combinations(df_review_sentiment.index, 2))
+print(ratings_combinations)
+p_ratings=[]
+
+for pairs in ratings_combinations:
+    ratings_combinations_data=df_review_sentiment[(df_review_sentiment.index == pairs[0]) | (df_review_sentiment.index == pairs[1])]
+    #print(ratings_combinations_data)
+    chi2, p, dof, ex = chi2_contingency(ratings_combinations_data, correction=True)
+    p_ratings.append(p)
+    
+#print(p_ratings)
+##Correct the p-value list
+from statsmodels.sandbox.stats.multicomp import multipletests
+
+reject_list, corrected_p_vals = multipletests(p_ratings, method='fdr_bh')[:2]
+
+for p_val, corr_p_val, reject, pairs in zip(p_ratings, corrected_p_vals, reject_list, ratings_combinations):
+    print(pairs, reject )
+    
