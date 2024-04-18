@@ -21,5 +21,13 @@ plt.show()
 
 
 #Countplot sentiments
-review_sentiment_countplot=sns.catplot(x="score", hue="sentiment", data=df, kind="count")
+##Sentiment analysis based on country
+country_sentiment=sns.catplot(x="country", hue="sentiment", data=df, kind="count")
+plt.xlabel("Country")
+plt.ylabel("Count")
+plt.title("Sentiments towards instagram in each country")
+
 plt.show()
+
+sentiment_country=df.groupby(["country", "sentiment"]).count()
+print(sentiment_country)
