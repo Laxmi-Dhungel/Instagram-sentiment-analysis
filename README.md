@@ -55,7 +55,7 @@ Figure 5. The count of sentiments (positive, neutral, and negative) in each coun
 
 **Instagram version used by each country**
 
-The Instagram version used by each country was counted. The US and India mainly used the latest nstagram version 323 whereas most reviewers from Canada and Great Britian used version 322.1.0. Reviewers from Germany used 322.1.0 and 323 equally (50/50). 
+The Instagram version used by each country was counted. The US and India mainly used the latest nstagram version 323 whereas most reviewers from Canada and Great Britian used version 322.1.0. Reviewers from Germany used 322.1.0 and 323 equally (50/50). (https://github.com/Laxmi-Dhungel/Instagram-sentiment-analysis/blob/main/Countplot_version)
 
 ![count_instagram_version](https://github.com/Laxmi-Dhungel/Instagram-sentiment-analysis/assets/154451345/b346077b-ed39-4c88-b15b-1d134964b639)
 
