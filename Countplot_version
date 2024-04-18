@@ -1,4 +1,4 @@
-#Review based on version
+#Countplot based on version
 df_version_review=df.groupby(["country", "version"])["score"].agg(["mean", "count"])
 print(df_version_review)
 
