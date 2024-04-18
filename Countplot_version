@@ -1,0 +1,11 @@
+#Review based on version
+df_version_review=df.groupby(["country", "version"])["score"].agg(["mean", "count"])
+print(df_version_review)
+
+count_country_version=sns.countplot(x="country", hue="version", data=df)
+plt.xlabel("Country")
+plt.ylabel("Count")
+plt.title("Count of instagram version used in each country")
+sns.move_legend(count_country_version, "upper left", bbox_to_anchor=(1, 1.05))
+
+plt.show()
