@@ -1,0 +1,20 @@
+#Average sentiment scores and statistical analysis
+mean_sentiment_country=df.groupby("country")["sentiment_score"].mean()
+print(mean_sentiment_country)
+
+from statsmodels.stats.multicomp import pairwise_tukeyhsd
+
+tukey_country_sentiment=pairwise_tukeyhsd(endog=df["sentiment_score"], groups=df["country"], alpha=0.05)
+tukey_summary_country_sentiment=tukey_country_sentiment.summary()
+tukey_df_country_sentiment = pd.DataFrame(data=tukey_summary_country_sentiment.data[1:], columns=tukey_summary_country_sentiment.data[0])
+significant_tukey_country_sentiment=tukey_df_country_sentiment[tukey_df_country_sentiment["p-adj"]<=0.05]
+##DE significantly different than all the others
+
+##Average sentiment in each country
+sentiment_bar=sns.barplot(x="country", y="sentiment_score", data=df, errorbar="se", capsize=0.5, hue="country")
+plt.xlabel("Country")
+plt.ylabel("Sentiment score")
+plt.title("Average sentiment scores in each country")
+plt.text(1.0, 0.01, "*", ha='center', fontsize=20)
+
+plt.show()
