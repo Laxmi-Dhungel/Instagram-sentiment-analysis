@@ -31,7 +31,7 @@ The pairwise tukeyhsd test was used to determine the statistically significant d
 
 **Review based on country**
 
-The average rating for Instagram for each country was computed. The highest average rating was given by India (2.60) whereas the lowest average rating was given by Germany. The average rating given by Germany was significantly lower than rating given by India and US (Tukeyhsd, sig (p<=0.05)). Further, the review scores for each country were counted. Most countries gave a score of 1 followed by 5 (except Germany). (https://github.com/Laxmi-Dhungel/Instagram-sentiment-analysis/blob/main/Review_country_wise)
+The average rating for Instagram for each country was computed. The highest average rating was given by India (2.60) whereas the lowest average rating was given by Germany (Figure 2). The average rating given by Germany was significantly lower than rating given by India and US (Tukeyhsd, sig (p<=0.05)). Further, the review scores for each country were counted. Most countries gave a score of 1 followed by 5 (except Germany) (Figure 3). (https://github.com/Laxmi-Dhungel/Instagram-sentiment-analysis/blob/main/Review_country_wise)
 
 ![Average_rating-country](https://github.com/Laxmi-Dhungel/Instagram-sentiment-analysis/assets/154451345/48cff7e8-11ae-4e2f-bb14-77a5f0e4bf70)
 
@@ -43,7 +43,7 @@ Figure 3. Count of review scores (Rating) for each country. Most of the people i
 
 **Sentiments based on country**
 
-The sentiment scores were obtained using Python NLTK (natural language toolkit) described in methodology section. The US had the highest sentiment score (0.19) whereas Germany had the lowest sentiment score (0.2). The sentiment score for Germany was significantly lower than sentiment score for any other country. The sentiment scores were divided into positive (>0), neutral (=0) and negative (<0) based on the compound scores obtained from sentiment analyzer. The positive, neutral, and negative sentiments for each country were counted. For all countries (except Germany), there was highest number of positive sentiment whereas Germany had the lowest number of positive sentiments. Among all countries, the US had the highest number of positive sentiment count and Germany had the highest number of neutral and negative sentiment count. (https://github.com/Laxmi-Dhungel/Instagram-sentiment-analysis/blob/main/Sentiments_country) 
+The sentiment scores were obtained using Python NLTK (natural language toolkit) described in methodology section. The US had the highest sentiment score (0.19) whereas Germany had the lowest sentiment score (0.2) (Figure 4). The sentiment score for Germany was significantly lower than sentiment score for any other country. The sentiment scores were divided into positive (>0), neutral (=0) and negative (<0) based on the compound scores obtained from sentiment analyzer. The positive, neutral, and negative sentiments for each country were counted. For all countries (except Germany), there was highest number of positive sentiment whereas Germany had the lowest number of positive sentiments (Figure 5). Among all countries, the US had the highest number of positive sentiment count and Germany had the highest number of neutral and negative sentiment count. (https://github.com/Laxmi-Dhungel/Instagram-sentiment-analysis/blob/main/Sentiments_country) 
 
 ![average_sentiments_country](https://github.com/Laxmi-Dhungel/Instagram-sentiment-analysis/assets/154451345/e1b95726-85c5-4c1c-b78f-fe90d598616f)
 
@@ -55,7 +55,7 @@ Figure 5. The count of sentiments (positive, neutral, and negative) in each coun
 
 **Instagram version used by each country**
 
-The Instagram version used by each country was counted. The US and India mainly used the latest nstagram version 323 whereas most reviewers from Canada and Great Britian used version 322.1.0. Reviewers from Germany used 322.1.0 and 323 equally (50/50). (https://github.com/Laxmi-Dhungel/Instagram-sentiment-analysis/blob/main/Countplot_version)
+The Instagram version used by each country was counted. The US and India mainly used the latest nstagram version 323 whereas most reviewers from Canada and Great Britian used version 322.1.0 (Figure 6). Reviewers from Germany used 322.1.0 and 323 equally (50/50). (https://github.com/Laxmi-Dhungel/Instagram-sentiment-analysis/blob/main/Countplot_version)
 
 ![count_instagram_version](https://github.com/Laxmi-Dhungel/Instagram-sentiment-analysis/assets/154451345/b346077b-ed39-4c88-b15b-1d134964b639)
 
@@ -63,7 +63,7 @@ Figure 6. Count of Instagram versions used in each country. All (100/100) of the
 
 **Relationship between sentiment score and review score (Rating)**
 
-The average sentiment score for each review score was determined. The average sentiment score was highest for the review score 5 whereas it was lowest for the review score 1. The average sentiment score for review score 1 was significantly lower than review score 4 and 5. Similarly, the average sentiment score for review scores 2 and 3 was significantly lower than review score 5. There was a low positive correlation between review score and sentiment score (0.37). The relative percentages of sentiments for each review scores showed that percentages of negative sentiments (40%) were highest in review score 1, percentages of neutral sentiments were highest in review score 2 (37%) and 4 (51.5%), and the percentages of positive sentiments was highest in review score 3 (46%) and 5(70%). The review score 5, 4 and 1 had the highest percentages of positive, neutral and negative scores respectively. (https://github.com/Laxmi-Dhungel/Instagram-sentiment-analysis/blob/main/Relationship_sentiment_review)
+The average sentiment score for each review score was determined. The average sentiment score was highest for the review score 5 whereas it was lowest for the review score 1 (Figure 7). The average sentiment score for review score 1 was significantly lower than review score 4 and 5. Similarly, the average sentiment score for review scores 2 and 3 was significantly lower than review score 5. There was a low positive correlation between review score and sentiment score (0.37). The relative percentages of sentiments for each review scores showed that percentages of negative sentiments (40%) were highest in review score 1, percentages of neutral sentiments were highest in review score 2 (37%) and 4 (51.5%), and the percentages of positive sentiments was highest in review score 3 (46%) and 5(70%) (Figure 8). The review score 5, 4 and 1 had the highest percentages of positive, neutral and negative scores respectively. (https://github.com/Laxmi-Dhungel/Instagram-sentiment-analysis/blob/main/Relationship_sentiment_review)
 
 ![review_score_sentiment_score](https://github.com/Laxmi-Dhungel/Instagram-sentiment-analysis/assets/154451345/f5d41879-aa8c-4c96-a972-f6abec1ee2b8)
 
