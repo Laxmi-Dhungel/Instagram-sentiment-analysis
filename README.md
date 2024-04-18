@@ -77,6 +77,11 @@ Figure 7. The bar graph showing the average sentiment scores for each review sco
 Figure 8. Relative percentages of sentiments for each review scores. The positive sentiment was highest for rating 5 whereas it was lowest for rating 2. The negative sentiment was highest for rating 1 whereas it was lowest for rating 4. The highest percentages of sentiments for ratings 1,2,3,4 and 5 were negative, neutral, positive, neutral and positve respectively. 
 
 
+**References**
+
+1. Ali, M. (2023). NLTK Sentiment Analysis Tutorial for Beginners. Retrieved from https://www.datacamp.com/tutorial/text-analytics-beginners-nltk
+2. Kanchana Karunarathna. (2024). Instagram Ratings &amp; Reviews: Appstore. https://doi.org/10.34740/KAGGLE/DSV/7916478
+
 
 
 
