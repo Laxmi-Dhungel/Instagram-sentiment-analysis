@@ -31,7 +31,7 @@ The pairwise tukeyhsd test was used to determine the statistically significant d
 
 **Review based on country**
 
-The average rating for Instagram for each country was computed. The highest average rating was given by India (2.60) whereas the lowest average rating was given by Germany. The average rating given by Germany was significantly lower than rating given by India and US (Tukeyhsd, sig (p<=0.05)). Further, the review scores for each country were counted. Most countries gave a score of 1 followed by 5 (except Germany). 
+The average rating for Instagram for each country was computed. The highest average rating was given by India (2.60) whereas the lowest average rating was given by Germany. The average rating given by Germany was significantly lower than rating given by India and US (Tukeyhsd, sig (p<=0.05)). Further, the review scores for each country were counted. Most countries gave a score of 1 followed by 5 (except Germany). (https://github.com/Laxmi-Dhungel/Instagram-sentiment-analysis/blob/main/Review_country_wise)
 
 ![Average_rating-country](https://github.com/Laxmi-Dhungel/Instagram-sentiment-analysis/assets/154451345/48cff7e8-11ae-4e2f-bb14-77a5f0e4bf70)
 
