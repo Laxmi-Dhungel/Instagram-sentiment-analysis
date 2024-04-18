@@ -18,3 +18,8 @@ plt.title("Average sentiment scores in each country")
 plt.text(1.0, 0.01, "*", ha='center', fontsize=20)
 
 plt.show()
+
+
+#Countplot sentiments
+review_sentiment_countplot=sns.catplot(x="score", hue="sentiment", data=df, kind="count")
+plt.show()
