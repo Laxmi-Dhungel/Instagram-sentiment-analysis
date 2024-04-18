@@ -23,3 +23,16 @@ plt.text(2, 3.6, "*", ha='center', fontsize=20)
 bar_country_review.annotate(" ", xy=(2.5, 4.0),  xytext=(2.5, 4.0), arrowprops=dict(color='black', lw=2, arrowstyle='-[', ), ha='center', size=95)
 plt.text(2.5, 4.6, "*", ha='center', fontsize=20)
 plt.show()
+
+
+
+#Count of each review country wise
+count_review_country_grouped=pd.DataFrame(df.groupby(["country", "score"])["id"].count())
+print(count_review_country_grouped)
+
+count_review_country=sns.countplot(x="country", data=df, hue="score")
+plt.xlabel("Country")
+plt.ylabel("Count")
+plt.title("Count of review scores for each country")
+sns.move_legend(count_review_country, "upper left", bbox_to_anchor=(1, 1.05))
+plt.show()
